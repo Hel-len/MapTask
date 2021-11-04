@@ -144,10 +144,9 @@ extension ViewController {
                 return
             }
             guard let response = response else {
-                self.alert(title: "Маршрут не доступен")
+                self.alertWithMessage(title: "Ошибка!", message: "Маршрут не доступен")
                 return
             }
-            
             var minRoute = response.routes[0]
             for route in response.routes {
                 minRoute = (route.distance < minRoute.distance) ? route : minRoute
