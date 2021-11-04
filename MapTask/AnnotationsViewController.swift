@@ -4,7 +4,6 @@
 //
 //  Created by Елена Дранкина on 04.11.2021.
 //
-
 import Foundation
 import MapKit
 /*
@@ -78,7 +77,6 @@ extension ViewController {
      Обнуляем массив с аннотациями для одного маршрута
     */
     private func addAnnotations() {
-        
         if annotationsForRoute.count > 3 {
             allAnnotations.append(annotationsForRoute)
         }
