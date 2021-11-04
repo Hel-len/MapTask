@@ -16,7 +16,6 @@ class NetworkService {
     var collection = FeatureCollection(features: nil)
     
     func fetchData(from url: String?, with complition: @escaping (FeatureCollection) -> Void) {
-        
         guard let stringURL = url else { return }
         guard let url = URL(string: stringURL) else { return }
         
@@ -26,14 +25,12 @@ class NetworkService {
                 return
             }
             guard let data = data else { return }
-            
             do {
                 let data = try JSONDecoder().decode(FeatureCollection.self, from: data)
                 
                 DispatchQueue.main.async {
                     complition(data)
                 }
-                
             } catch let error {
                 print(error)
             }

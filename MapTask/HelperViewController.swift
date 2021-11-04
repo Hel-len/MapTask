@@ -13,7 +13,6 @@ extension ViewController {
      Во избежании дублирования кода настройку констрейнтов для кнопок запаковываем в отдельную функцию, в которую
      передаем изменяющиеся параметры.
     */
-    
     func setConstrains() {
         view.addSubview(mapView)
         NSLayoutConstraint.activate([

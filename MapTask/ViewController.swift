@@ -4,14 +4,12 @@
 //
 //  Created by Елена Дранкина on 03.11.2021.
 //
-
 import UIKit
 import MapKit
 import CoreLocation
 /*
   Так как приложение без сториборда. перед работой настраиваем сцинДелегейт и пилист.
 */
-
 class ViewController: UIViewController {
 /* Объявляем переменные
      pins сюда запишем результат парсинга джесона и будем работать с ним.
@@ -32,7 +30,6 @@ class ViewController: UIViewController {
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.isZoomEnabled = true
         mapView.isScrollEnabled = true
-        
         return mapView
     }()
     
@@ -74,7 +71,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         mapView.delegate = self
-
         setConstrains()
         loadTrack.addTarget(self, action:#selector(loadTrackButtonTapped), for: .touchUpInside)
         routeButton.addTarget(self, action:#selector(routeButtonTapped), for: .touchUpInside)
@@ -147,7 +143,6 @@ extension ViewController {
                 print(error)
                 return
             }
-            
             guard let response = response else {
                 self.alert(title: "Маршрут не доступен")
                 return
@@ -170,8 +165,7 @@ extension ViewController: MKMapViewDelegate {
     /*
       Отрисовываем маршрут на карте с помощью МапКит оверлей.
     */
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {        
         let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
         renderer.strokeColor = .red
         return renderer

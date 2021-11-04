@@ -8,7 +8,6 @@ import MapKit
 /*
   Модель для парсинга джесона
 */
-
 struct FeatureCollection: Decodable {
     let features: [Feature]?
 }
@@ -20,7 +19,6 @@ struct Feature: Decodable {
 struct Geometry: Decodable {
     let coordinates: [[[[CLLocationDegrees]]]]?
 }
-
 
 enum PinsUrl: String {
     case pinApi = "https://waadsu.com/api/russia.geo.json"
